@@ -66,7 +66,7 @@ def book_seats(request,theater_id):
         'theater': theaters,
         'seats': seats,
         'available_seats': available_seats,
-        'error': error_message,
+        'error': error_message
     }
 
 )
