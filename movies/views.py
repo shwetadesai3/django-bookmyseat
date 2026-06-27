@@ -59,16 +59,7 @@ def book_seats(request,theater_id):
         selected_Seats= request.POST.getlist('seats')
         error_seats=[]
         if not selected_Seats:
-           return render(
-    request,
-    'movies/seat_selection.html',
-    {
-        'theater': theaters,
-        'seats': seats,
-        'available_seats': available_seats,
-        'error': error_message
-    }
-
+            return render(request,"movies/seat_selection.html",{'theater':theaters,"seats":seats,'error':"No seat selected"}
 )
         for seat_id in selected_Seats:
             seat=get_object_or_404(Seat,id=seat_id,theater=theaters)
