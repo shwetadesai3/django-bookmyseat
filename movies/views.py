@@ -59,7 +59,17 @@ def book_seats(request,theater_id):
         selected_Seats= request.POST.getlist('seats')
         error_seats=[]
         if not selected_Seats:
-            return render(request,"movies/seat_selection.html",{'theater':theaters,"seats":seats,'error':"No seat selected"})
+           return render(
+    request,
+    'movies/seat_selection.html',
+    {
+        'theater': theaters,
+        'seats': seats,
+        'available_seats': available_seats,
+        'error': error_message,
+    }
+
+)
         for seat_id in selected_Seats:
             seat=get_object_or_404(Seat,id=seat_id,theater=theaters)
             if seat.is_booked:
@@ -77,7 +87,7 @@ def book_seats(request,theater_id):
             except IntegrityError:
                 error_seats.append(seat.seat_number)
         if error_seats:
-            error_message="The following seats are already booked:{',',join(error_seats)}"
+            error_message = f"The following seats are already booked: {', '.join(error_seats)}"
             return render(
     request,
     'movies/seat_selection.html',
