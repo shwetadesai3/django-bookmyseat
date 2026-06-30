@@ -7,10 +7,9 @@ from django.core.paginator import Paginator
 
 from django.core.paginator import Paginator
 from .models import Movie, Theater, Seat, Booking, Genre, Language
-
+from .tasks import send_booking_email
 def movie_list(request):
-
-    movies = Movie.objects.all()
+    movies = Movie.objects.all().order_by('-id')
 
     search_query = request.GET.get('search')
     genres = request.GET.getlist('genres')
@@ -43,7 +42,6 @@ def movie_list(request):
             'languages': Language.objects.all(),
         }
     )
-
 def theater_list(request,movie_id):
     movie = get_object_or_404(Movie,id=movie_id)
     theater=Theater.objects.filter(movie=movie)
