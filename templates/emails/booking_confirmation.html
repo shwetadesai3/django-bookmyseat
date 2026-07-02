@@ -1,11 +1,46 @@
-<h2>Booking Confirmed 🎬</h2>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Booking Confirmed 🎉</h2>
 
 <p>Hello {{ user.username }},</p>
 
-<p><strong>Movie:</strong> {{ movie }}</p>
-<p><strong>Theater:</strong> {{ theater }}</p>
-<p><strong>Show Time:</strong> {{ show_time }}</p>
-<p><strong>Seats:</strong> {{ seats }}</p>
-<p><strong>Payment ID:</strong> {{ payment_id }}</p>
+<p>Your booking has been confirmed.</p>
 
-<p>Thank you for booking with BookMySeat.</p>
+<table border="1" cellpadding="10">
+    <tr>
+        <td>Movie</td>
+        <td>{{ booking.show.movie.name }}</td>
+    </tr>
+
+    <tr>
+        <td>Theater</td>
+        <td>{{ booking.show.theater.name }}</td>
+    </tr>
+
+    <tr>
+        <td>Show Time</td>
+        <td>{{ booking.show.show_time }}</td>
+    </tr>
+
+    <tr>
+        <td>Seats</td>
+        <td>{{ seats }}</td>
+    </tr>
+
+    <tr>
+        <td>Booking ID</td>
+        <td>{{ booking.id }}</td>
+    </tr>
+
+    <tr>
+        <td>Payment ID</td>
+        <td>{{ booking.payment_id }}</td>
+    </tr>
+</table>
+
+<p>Thank you for using BookMySeat.</p>
+
+</body>
+</html>

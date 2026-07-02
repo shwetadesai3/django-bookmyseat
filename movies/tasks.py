@@ -1,34 +1,63 @@
 from celery import shared_task
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from .models import Booking
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 @shared_task(bind=True, max_retries=3)
 def send_booking_email(self, booking_id):
+
     try:
-        booking = Booking.objects.get(id=booking_id)
+        booking = Booking.objects.select_related(
+            'user',
+            'movie',
+            'theater'
+        ).get(id=booking_id)
 
-        html_message = render_to_string(
-            "emails/booking_confirmation.html",
+        seats = booking.seat.seat_number
+
+        html_content = render_to_string(
+            'emails/booking_confirmation.html',
             {
-                "user": booking.user,
-                "movie": booking.movie.name,
-                "theater": booking.theater.name,
-                "show_time": booking.show_time,
-                "seats": booking.seat_numbers,
-                "payment_id": booking.payment_id,
-            },
+                'booking': booking,
+                'user': booking.user,
+                'seats': seats,
+            }
         )
 
-        email = EmailMessage(
-            subject="BookMySeat Ticket Confirmation",
-            body=html_message,
-            to=[booking.user.email],
+        email = EmailMultiAlternatives(
+            subject="Booking Confirmation",
+            body="Your booking has been confirmed.",
+            from_email=None,
+            to=[booking.user.email]
         )
 
-        email.content_subtype = "html"
+        email.attach_alternative(
+            html_content,
+            "text/html"
+        )
+
         email.send()
 
+        logger.info(
+            f"Booking email sent successfully. Booking ID: {booking.id}"
+        )
+
+    except Booking.DoesNotExist:
+        logger.error(
+            f"Booking not found. Booking ID: {booking_id}"
+        )
+
     except Exception as exc:
-        raise self.retry(exc=exc, countdown=60)
+
+        logger.error(
+            f"Email failed for booking {booking_id}: {exc}"
+        )
+
+        raise self.retry(
+            exc=exc,
+            countdown=60
+        )
