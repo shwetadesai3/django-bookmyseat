@@ -5,6 +5,7 @@ from django.core.paginator import Paginator
 
 from .models import Movie, Theater, Seat, Booking, Genre, Language
 from .tasks import send_booking_email
+from django.http import JsonResponse
 
 
 def movie_list(request):
@@ -56,6 +57,7 @@ def theater_list(request, movie_id):
     )
 
 
+    
 @login_required(login_url='/login/')
 def book_seats(request, theater_id):
 
@@ -142,3 +144,21 @@ def book_seats(request, theater_id):
             'seats': seats
         }
     )
+
+def book_ticket(request):
+
+    selected_seats = request.POST.getlist("selected_seats")
+    payment_id = request.POST.get("payment_id")
+
+    booking = Booking.objects.create(
+        user=request.user,
+        seat_numbers=selected_seats,
+        payment_id=payment_id,
+    )
+
+    send_booking_email.delay(booking.id)
+
+    return JsonResponse({
+        "status": "success",
+        "message": "Booking Confirmed"
+    })

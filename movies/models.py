@@ -70,3 +70,43 @@ class Booking(models.Model):
 
     def __str__(self):
         return f'Booking by {self.user.username} for {self.seat.seat_number} at {self.theater.name}'
+
+class Payment(models.Model):
+    PAYMENT_METHODS = [
+        ('UPI', 'UPI'),
+        ('CARD', 'Card'),
+        ('NETBANKING', 'Net Banking'),
+    ]
+
+    booking = models.OneToOneField(
+        Booking,
+        on_delete=models.CASCADE,
+        related_name='payment'
+    )
+
+    payment_id = models.CharField(
+        max_length=100,
+        unique=True
+    )
+
+    amount = models.DecimalField(
+        max_digits=10,
+        decimal_places=2
+    )
+
+    payment_method = models.CharField(
+        max_length=20,
+        choices=PAYMENT_METHODS
+    )
+
+    payment_status = models.CharField(
+        max_length=20,
+        default='SUCCESS'
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    def __str__(self):
+        return self.payment_id

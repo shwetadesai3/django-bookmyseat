@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Movie, Theater, Seat, Booking, Genre, Language
+from .models import Movie, Theater, Seat, Booking, Genre, Language, Payment
 
 
 @admin.register(Movie)
@@ -26,3 +26,4 @@ class BookingAdmin(admin.ModelAdmin):
 
 admin.site.register(Genre)
 admin.site.register(Language)
+admin.site.register(Payment)

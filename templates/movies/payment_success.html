@@ -1,0 +1,33 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+
+<h2>
+Payment Successful
+</h2>
+
+<p>
+Movie:
+{{ theater.movie.name }}
+</p>
+
+<p>
+Theater:
+{{ theater.name }}
+</p>
+
+<p>
+Payment Method:
+{{ payment_method }}
+</p>
+
+<p>
+Amount Paid:
+₹{{ amount }}
+</p>
+
+<a href="/">
+Back Home
+</a>
+
+{% endblock %}

@@ -146,15 +146,16 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 from decouple import config
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+
+
 EMAIL_HOST_USER = config("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
-
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
@@ -162,12 +163,13 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 # CELERY CONFIGURATION
 # ==========================================
 
-CELERY_BROKER_URL = "redis://localhost:6379/0"
-CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 
-CELERY_ACCEPT_CONTENT = ["json"]
-CELERY_TASK_SERIALIZER = "json"
-CELERY_RESULT_SERIALIZER = "json"
+CELERY_TASK_ACKS_LATE = True
+
+CELERY_TASK_DEFAULT_RETRY_DELAY = 60
+CELERY_TASK_MAX_RETRIES = 3
 
 
 # ==========================================
@@ -175,22 +177,21 @@ CELERY_RESULT_SERIALIZER = "json"
 # ==========================================
 
 LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
+    'version': 1,
+    'disable_existing_loggers': False,
 
-    "handlers": {
-        "file": {
-            "level": "INFO",
-            "class": "logging.FileHandler",
-            "filename": "email.log",
+    'handlers': {
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': 'email.log',
         },
     },
 
-    "loggers": {
-        "movies.tasks": {
-            "handlers": ["file"],
-            "level": "INFO",
-            "propagate": True,
+    'loggers': {
+        'bookings': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
         },
     },
 }

@@ -2,11 +2,11 @@
 <html>
 <body>
 
-<h2>Booking Confirmed 🎉</h2>
+<h2>Booking Confirmation</h2>
 
-<p>Hello {{ user.username }},</p>
+<p>Hello {{ user.first_name }},</p>
 
-<p>Your booking has been confirmed.</p>
+<p>Your ticket has been successfully booked.</p>
 
 <table border="1" cellpadding="10">
     <tr>
@@ -30,17 +30,12 @@
     </tr>
 
     <tr>
-        <td>Booking ID</td>
-        <td>{{ booking.id }}</td>
-    </tr>
-
-    <tr>
         <td>Payment ID</td>
-        <td>{{ booking.payment_id }}</td>
+        <td>{{ payment_id }}</td>
     </tr>
 </table>
 
-<p>Thank you for using BookMySeat.</p>
+<p>Thank you for booking with us.</p>
 
 </body>
 </html>

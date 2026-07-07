@@ -1,0 +1,56 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+
+<h2>Payment Page</h2>
+
+<p>Movie: {{ theater.movie.name }}</p>
+
+<p>Theater: {{ theater.name }}</p>
+
+<p>Total Amount: ₹{{ amount }}</p>
+
+<form method="post">
+    {% csrf_token %}
+
+    <label>
+        <input
+            type="radio"
+            name="payment_method"
+            value="UPI"
+            required
+        >
+        UPI
+    </label>
+
+    <br><br>
+
+    <label>
+        <input
+            type="radio"
+            name="payment_method"
+            value="CARD"
+        >
+        Credit / Debit Card
+    </label>
+
+    <br><br>
+
+    <label>
+        <input
+            type="radio"
+            name="payment_method"
+            value="NETBANKING"
+        >
+        Net Banking
+    </label>
+
+    <br><br>
+
+    <button type="submit">
+        Pay Now
+    </button>
+
+</form>
+
+{% endblock %}
