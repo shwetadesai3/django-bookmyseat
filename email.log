@@ -1,0 +1,522 @@
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Internal Server Error: /movies/theater/4/seats/book/
+Traceback (most recent call last):
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\bookmyseat\movies\views.py", line 139, in book_seats
+    send_booking_email.delay(booking_data)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'function' object has no attribute 'delay'
+C:\Users\shwet\bookmyseat\movies\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+C:\Users\shwet\bookmyseat\movies\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\users\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\users\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+C:\Users\shwet\bookmyseat\users\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\users\forms.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\users\forms.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\users\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\models.py changed, reloading.
+C:\Users\shwet\bookmyseat\movies\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\users\views.py changed, reloading.
+C:\Users\shwet\bookmyseat\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\users\views.py changed, reloading.
+C:\Users\shwet\bookmyseat\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\views.py changed, reloading.
+C:\Users\shwet\bookmyseat\movies\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\urls.py changed, reloading.
+C:\Users\shwet\bookmyseat\movies\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\urls.py changed, reloading.
+C:\Users\shwet\bookmyseat\movies\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\urls.py changed, reloading.
+C:\Users\shwet\bookmyseat\movies\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\admin.py changed, reloading.
+C:\Users\shwet\bookmyseat\movies\admin.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\users\views.py changed, reloading.
+C:\Users\shwet\bookmyseat\users\views.py changed, reloading.
+C:\Users\shwet\bookmyseat\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\users\views.py changed, reloading.
+C:\Users\shwet\bookmyseat\users\views.py changed, reloading.
+C:\Users\shwet\bookmyseat\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\admin.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+C:\Users\shwet\bookmyseat\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\movies\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+C:\Users\shwet\bookmyseat\movies\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Attempt 1 failed: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-85db2ad3e9bsm157720b3a.14 - gsmtp')
+Attempt 2 failed: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-39ae380d0bdsm305862a91.11 - gsmtp')
+Attempt 3 failed: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-85dc003af14sm122338b3a.36 - gsmtp')
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+C:\Users\shwet\bookmyseat\bookmyseat\settings.py changed, reloading.
+2026-09-04 02:40:30,772 ERROR movies Booking email failed. Booking ID=6
+Traceback (most recent call last):
+  File "C:\Users\shwet\bookmyseat\movies\tasks.py", line 62, in send_booking_email
+    email.send(fail_silently=False)
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\message.py", line 358, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 148, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 103, in open
+    self._partial_connection.login(self.username, self.password)
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3339885d29esm5815337eec.2 - gsmtp')
+2026-09-04 02:40:35,010 ERROR movies Booking email failed. Booking ID=6
+Traceback (most recent call last):
+  File "C:\Users\shwet\bookmyseat\movies\tasks.py", line 62, in send_booking_email
+    email.send(fail_silently=False)
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\message.py", line 358, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 148, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 103, in open
+    self._partial_connection.login(self.username, self.password)
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3339af25062sm7798890eec.16 - gsmtp')
+2026-09-04 02:40:39,666 ERROR movies Booking email failed. Booking ID=6
+Traceback (most recent call last):
+  File "C:\Users\shwet\bookmyseat\movies\tasks.py", line 62, in send_booking_email
+    email.send(fail_silently=False)
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\message.py", line 358, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 148, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 103, in open
+    self._partial_connection.login(self.username, self.password)
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-1432435ec2bsm4814342c88.3 - gsmtp')
+2026-09-04 02:40:46,575 ERROR movies Booking email failed. Booking ID=6
+Traceback (most recent call last):
+  File "C:\Users\shwet\bookmyseat\movies\tasks.py", line 62, in send_booking_email
+    email.send(fail_silently=False)
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\message.py", line 358, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 148, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 103, in open
+    self._partial_connection.login(self.username, self.password)
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3339b608409sm5711791eec.21 - gsmtp')
+2026-09-04 02:45:15,469 ERROR movies Booking email failed. Booking ID=7
+Traceback (most recent call last):
+  File "C:\Users\shwet\bookmyseat\movies\tasks.py", line 62, in send_booking_email
+    email.send(fail_silently=False)
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\message.py", line 358, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 148, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 103, in open
+    self._partial_connection.login(self.username, self.password)
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2db14959fd2sm7130235ad.23 - gsmtp')
+2026-09-04 02:45:19,950 ERROR movies Booking email failed. Booking ID=7
+Traceback (most recent call last):
+  File "C:\Users\shwet\bookmyseat\movies\tasks.py", line 62, in send_booking_email
+    email.send(fail_silently=False)
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\message.py", line 358, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 148, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 103, in open
+    self._partial_connection.login(self.username, self.password)
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2db1495b566sm6987275ad.14 - gsmtp')
+2026-09-04 02:45:24,355 ERROR movies Booking email failed. Booking ID=7
+Traceback (most recent call last):
+  File "C:\Users\shwet\bookmyseat\movies\tasks.py", line 62, in send_booking_email
+    email.send(fail_silently=False)
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\message.py", line 358, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 148, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 103, in open
+    self._partial_connection.login(self.username, self.password)
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-39b25f88475sm3532284a91.1 - gsmtp')
+2026-09-04 02:45:32,233 ERROR movies Booking email failed. Booking ID=7
+Traceback (most recent call last):
+  File "C:\Users\shwet\bookmyseat\movies\tasks.py", line 62, in send_booking_email
+    email.send(fail_silently=False)
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\message.py", line 358, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 148, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 103, in open
+    self._partial_connection.login(self.username, self.password)
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-39b260f64ecsm3455412a91.8 - gsmtp')
+2026-09-04 02:53:01,467 ERROR movies Booking email failed. Booking ID=8
+Traceback (most recent call last):
+  File "C:\Users\shwet\bookmyseat\movies\tasks.py", line 62, in send_booking_email
+    email.send(fail_silently=False)
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\message.py", line 358, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 148, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 103, in open
+    self._partial_connection.login(self.username, self.password)
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-8614f872e0esm940942b3a.4 - gsmtp')
+2026-09-04 02:53:05,361 ERROR movies Booking email failed. Booking ID=8
+Traceback (most recent call last):
+  File "C:\Users\shwet\bookmyseat\movies\tasks.py", line 62, in send_booking_email
+    email.send(fail_silently=False)
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\message.py", line 358, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 148, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 103, in open
+    self._partial_connection.login(self.username, self.password)
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-2db14959954sm7083645ad.27 - gsmtp')
+2026-09-04 02:53:10,576 ERROR movies Booking email failed. Booking ID=8
+Traceback (most recent call last):
+  File "C:\Users\shwet\bookmyseat\movies\tasks.py", line 62, in send_booking_email
+    email.send(fail_silently=False)
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\message.py", line 358, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 148, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 103, in open
+    self._partial_connection.login(self.username, self.password)
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-39ae8f1cf6dsm4473800a91.3 - gsmtp')
+2026-09-04 02:53:14,879 ERROR movies Booking email failed. Booking ID=8
+Traceback (most recent call last):
+  File "C:\Users\shwet\bookmyseat\movies\tasks.py", line 62, in send_booking_email
+    email.send(fail_silently=False)
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\message.py", line 358, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 148, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 103, in open
+    self._partial_connection.login(self.username, self.password)
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-39b08cacba5sm10298673a91.12 - gsmtp')
+2026-09-04 03:04:05,060 ERROR movies Booking email failed. Booking ID=9
+Traceback (most recent call last):
+  File "C:\Users\shwet\bookmyseat\movies\tasks.py", line 62, in send_booking_email
+    email.send(fail_silently=False)
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\message.py", line 358, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 148, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 103, in open
+    self._partial_connection.login(self.username, self.password)
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-39b08c3a526sm9819713a91.10 - gsmtp')
+2026-09-04 03:04:09,505 ERROR movies Booking email failed. Booking ID=9
+Traceback (most recent call last):
+  File "C:\Users\shwet\bookmyseat\movies\tasks.py", line 62, in send_booking_email
+    email.send(fail_silently=False)
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\message.py", line 358, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 148, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 103, in open
+    self._partial_connection.login(self.username, self.password)
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-39b261549f3sm3570919a91.16 - gsmtp')
+2026-09-04 03:04:12,889 ERROR movies Booking email failed. Booking ID=9
+Traceback (most recent call last):
+  File "C:\Users\shwet\bookmyseat\movies\tasks.py", line 62, in send_booking_email
+    email.send(fail_silently=False)
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\message.py", line 358, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 148, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 103, in open
+    self._partial_connection.login(self.username, self.password)
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-39b07b197a9sm9649804a91.0 - gsmtp')
+2026-09-04 03:04:18,106 ERROR movies Booking email failed. Booking ID=9
+Traceback (most recent call last):
+  File "C:\Users\shwet\bookmyseat\movies\tasks.py", line 62, in send_booking_email
+    email.send(fail_silently=False)
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\message.py", line 358, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 148, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shwet\PyCharmMiscProject\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 103, in open
+    self._partial_connection.login(self.username, self.password)
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "C:\Users\shwet\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-39ae62a54f6sm5096246a91.1 - gsmtp')
+2026-09-05 04:10:45,272 INFO movies Booking email sent successfully. Booking ID=13
+2026-09-06 02:24:26,230 INFO movies Booking email sent successfully. Booking ID=8
+2026-09-06 02:27:59,262 INFO movies Booking email sent successfully. Booking ID=16

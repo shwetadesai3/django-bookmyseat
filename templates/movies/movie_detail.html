@@ -1,0 +1,70 @@
+{% if video_id %}
+
+<div class="trailer-section">
+
+    <h2>🎬 {{ movie.name }} Trailer</h2>
+
+    <div class="trailer-container">
+
+        <iframe
+            src="https://www.youtube-nocookie.com/embed/{{ video_id }}"
+            title="{{ movie.name }} Trailer"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</div>
+
+{% else %}
+
+<div class="trailer-fallback">
+
+    <h3>🎬 Trailer Unavailable</h3>
+
+    <p>
+        या movie चा trailer सध्या उपलब्ध नाही.
+    </p>
+
+</div>
+
+{% endif %}
+<style>
+.trailer-section {
+    margin-top: 40px;
+}
+
+.trailer-section h2 {
+    margin-bottom: 20px;
+}
+
+.trailer-container {
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.trailer-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.trailer-fallback {
+    margin-top: 40px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.trailer-fallback h3 {
+    margin-bottom: 10px;
+}
+</style>

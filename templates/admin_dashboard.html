@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Analytics Dashboard</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        .header {
+            background: #111827;
+            color: white;
+            padding: 22px 30px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .header p {
+            margin: 6px 0 0;
+            color: #d1d5db;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1400px;
+            margin: 30px auto;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            gap: 15px;
+        }
+
+        .refresh-btn {
+            border: none;
+            background: #2563eb;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .refresh-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+            font-size: 15px;
+            color: #6b7280;
+        }
+
+        .card .value {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .section {
+            background: white;
+            padding: 22px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .section h2 {
+            margin-top: 0;
+            margin-bottom: 18px;
+            font-size: 21px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 13px;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+        }
+
+        th {
+            background: #f3f4f6;
+        }
+
+        .empty {
+            text-align: center;
+            color: #777;
+            padding: 25px;
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .status {
+            padding: 18px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+
+        .status strong {
+            display: block;
+            font-size: 24px;
+            margin-top: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #777;
+            padding: 20px;
+        }
+
+        @media (max-width: 1000px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .status-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cards,
+            .status-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            table {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>BookMySeat Admin Analytics</h1>
+    <p>Real-Time Booking & Revenue Dashboard</p>
+</div>
+
+<div class="container">
+
+    <div class="top-bar">
+        <div>
+            <h2>Dashboard Overview</h2>
+            <p>Analytics based on confirmed bookings and successful payments.</p>
+        </div>
+
+        <button class="refresh-btn" onclick="location.reload()">
+            Refresh Analytics
+        </button>
+    </div>
+
+
+    <!-- Revenue Cards -->
+    <div class="cards">
+
+        <div class="card">
+            <h3>Today's Revenue</h3>
+            <div class="value">
+                ₹{{ analytics.revenue.daily|default:"0" }}
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Last 7 Days Revenue</h3>
+            <div class="value">
+                ₹{{ analytics.revenue.weekly|default:"0" }}
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Last 30 Days Revenue</h3>
+            <div class="value">
+                ₹{{ analytics.revenue.monthly|default:"0" }}
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Cancellation Rate</h3>
+            <div class="value">
+                {{ analytics.cancellation_rate|default:"0" }}%
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Popular Movies -->
+    <div class="section">
+
+        <h2>🎬 Most Popular Movies</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Movie</th>
+                    <th>Confirmed Bookings</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            {% for movie in analytics.popular_movies %}
+
+                <tr>
+                    <td>
+                        {{ movie.movie__name }}
+                    </td>
+
+                    <td>
+                        {{ movie.total_bookings }}
+                    </td>
+                </tr>
+
+            {% empty %}
+
+                <tr>
+                    <td colspan="2" class="empty">
+                        No booking data available.
+                    </td>
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <!-- Busiest Theaters -->
+    <div class="section">
+
+        <h2>🏢 Busiest Theaters</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Theater</th>
+                    <th>Total Seats</th>
+                    <th>Booked Seats</th>
+                    <th>Occupancy Rate</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            {% for theater in analytics.busiest_theaters %}
+
+                <tr>
+
+                    <td>
+                        {{ theater.name }}
+                    </td>
+
+                    <td>
+                        {{ theater.total_seats }}
+                    </td>
+
+                    <td>
+                        {{ theater.booked_seats }}
+                    </td>
+
+                    <td>
+                        {{ theater.occupancy_rate }}%
+                    </td>
+
+                </tr>
+
+            {% empty %}
+
+                <tr>
+                    <td colspan="4" class="empty">
+                        No theater booking data available.
+                    </td>
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- Peak Booking Hours -->
+    <div class="section">
+
+        <h2>⏰ Peak Booking Hours</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Booking Time</th>
+                    <th>Bookings</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            {% for hour in analytics.peak_hours %}
+
+                <tr>
+
+                    <td>
+                        {{ hour.hour }}
+                    </td>
+
+                    <td>
+                        {{ hour.total_bookings }}
+                    </td>
+
+                </tr>
+
+            {% empty %}
+
+                <tr>
+                    <td colspan="2" class="empty">
+                        No peak-hour data available.
+                    </td>
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- Booking Status -->
+    <div class="section">
+
+        <h2>📊 Booking Status</h2>
+
+        <div class="status-grid">
+
+            {% for item in analytics.status_summary %}
+
+                <div class="status">
+
+                    <div>
+                        {{ item.booking_status }}
+                    </div>
+
+                    <strong>
+                        {{ item.total }}
+                    </strong>
+
+                </div>
+
+            {% empty %}
+
+                <div class="empty">
+                    No booking status data available.
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="footer">
+    BookMySeat © 2026 | Admin Analytics Dashboard
+</div>
+
+</body>
+</html>

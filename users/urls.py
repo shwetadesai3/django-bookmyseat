@@ -1,7 +1,20 @@
 from django.urls import path
 from .views import register, login_view,profile, reset_password, home
 from django.contrib.auth import views as auth_views
+from . import views
+from urllib.parse import urlparse, parse_qs
 
+def get_youtube_id(url):
+
+    parsed = urlparse(url)
+
+    if "youtu.be" in parsed.netloc:
+        return parsed.path[1:]
+
+    if "youtube.com" in parsed.netloc:
+        return parse_qs(parsed.query).get("v", [None])[0]
+
+    return None
 class CustomLogoutView(auth_views.LogoutView):
     def get(self, request, *args, **kwargs):
         return self.post(request, *args, **kwargs)
@@ -25,4 +38,5 @@ urlpatterns = [
     path('password-reset-complete/',
          auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'),
          name='password_reset_complete'),
+         path('messages/', views.messages, name='messages'),
 ]

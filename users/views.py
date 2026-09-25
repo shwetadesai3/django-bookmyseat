@@ -4,7 +4,12 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import login,authenticate
 from django.contrib.auth.decorators import login_required
 from movies.models import Movie , Booking
+from django.shortcuts import render
+from django.urls import path
+from . import views
 
+def messages(request):
+    return render(request, 'users/messages.html')
 def home(request):
     movies= Movie.objects.all()
     return render(request,'home.html',{'movies':movies})

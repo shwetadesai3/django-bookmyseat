@@ -1,56 +1,504 @@
-{% extends 'basic.html' %}
+{% extends "basic.html" %}
 
 {% block content %}
 
-<h2>Payment Page</h2>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
 
-<p>Movie: {{ theater.movie.name }}</p>
+            <div class="card shadow">
+                <div class="card-body text-center">
 
-<p>Theater: {{ theater.name }}</p>
+                    <h3 class="mb-3">Complete Your Payment</h3>
 
-<p>Total Amount: ₹{{ amount }}</p>
+                    <p>
+                        <strong>Movie:</strong>
+                        {{ booking.movie.name }}
+                    </p>
 
-<form method="post">
-    {% csrf_token %}
+                    <p>
+                        <strong>Theater:</strong>
+                        {{ booking.theater.name }}
+                    </p>
 
-    <label>
-        <input
-            type="radio"
-            name="payment_method"
-            value="UPI"
-            required
-        >
-        UPI
-    </label>
+                    <p>
+                        <strong>Seat:</strong>
+                        {{ booking.seat.seat_number }}
+                    </p>
 
-    <br><br>
+                    <hr>
 
-    <label>
-        <input
-            type="radio"
-            name="payment_method"
-            value="CARD"
-        >
-        Credit / Debit Card
-    </label>
+                    <h4>
+                        Amount: ₹{{ payment.amount }}
+                    </h4>
 
-    <br><br>
+                    <button
+                        type="button"
+                        id="pay-button"
+                        class="btn btn-success btn-lg mt-3"
+                    >
+                        Pay Now
+                    </button>
 
-    <label>
-        <input
-            type="radio"
-            name="payment_method"
-            value="NETBANKING"
-        >
-        Net Banking
-    </label>
+                    <div id="payment-message" class="mt-3"></div>
 
-    <br><br>
+                </div>
+            </div>
 
-    <button type="submit">
-        Pay Now
-    </button>
+        </div>
+    </div>
+</div>
 
-</form>
+
+<!-- Razorpay Checkout -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
+<script>
+
+const payButton = document.getElementById("pay-button");
+const paymentMessage = document.getElementById("payment-message");
+
+
+/*
+|--------------------------------------------------------------------------
+| PAYMENT STATE
+|--------------------------------------------------------------------------
+*/
+
+let paymentSuccessful = false;
+let paymentFailureHandled = false;
+let paymentVerificationStarted = false;
+
+
+/*
+|--------------------------------------------------------------------------
+| RAZORPAY OPTIONS
+|--------------------------------------------------------------------------
+*/
+
+const options = {
+
+    key: "{{ razorpay_key_id }}",
+
+    amount: "{{ payment.amount_paise }}",
+
+    currency: "INR",
+
+    name: "BookMySeat",
+
+    description: "Movie Ticket Booking",
+
+    order_id: "{{ payment.razorpay_order_id }}",
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | PAYMENT SUCCESS
+    |--------------------------------------------------------------------------
+    */
+
+    handler: function (response) {
+
+        console.log(
+            "RAZORPAY SUCCESS RESPONSE:",
+            response
+        );
+
+
+        /*
+         * Mark payment as successful immediately.
+         * This prevents payment.failed from cancelling
+         * the booking after successful payment.
+         */
+
+        paymentSuccessful = true;
+
+
+        if (paymentVerificationStarted) {
+            return;
+        }
+
+        paymentVerificationStarted = true;
+
+
+        paymentMessage.innerHTML =
+            '<div class="alert alert-info">' +
+            'Payment successful. Verifying payment...' +
+            '</div>';
+
+
+        payButton.disabled = true;
+
+
+        fetch("{% url 'payment_success' %}", {
+
+            method: "POST",
+
+            headers: {
+
+                "Content-Type": "application/json",
+
+                "X-CSRFToken": "{{ csrf_token }}"
+
+            },
+
+            body: JSON.stringify({
+
+                razorpay_order_id:
+                    response.razorpay_order_id,
+
+                razorpay_payment_id:
+                    response.razorpay_payment_id,
+
+                razorpay_signature:
+                    response.razorpay_signature
+
+            })
+
+        })
+
+
+        .then(response => {
+
+            console.log(
+                "PAYMENT SUCCESS HTTP STATUS:",
+                response.status
+            );
+
+            return response.json();
+
+        })
+
+
+        .then(data => {
+
+            console.log(
+                "PAYMENT SUCCESS SERVER RESPONSE:",
+                data
+            );
+
+
+            if (data.success) {
+
+                paymentMessage.innerHTML =
+                    '<div class="alert alert-success">' +
+                    'Payment successful! Redirecting...' +
+                    '</div>';
+
+
+                window.location.href =
+                    data.redirect_url;
+
+            }
+
+            else {
+
+                /*
+                 * Server rejected payment verification.
+                 * Do NOT call payment_failed here.
+                 */
+
+                payButton.disabled = false;
+
+                paymentMessage.innerHTML =
+                    '<div class="alert alert-danger">' +
+                    (
+                        data.message ||
+                        "Payment verification failed."
+                    ) +
+                    '</div>';
+
+            }
+
+        })
+
+
+        .catch(error => {
+
+            console.error(
+                "PAYMENT VERIFICATION ERROR:",
+                error
+            );
+
+
+            payButton.disabled = false;
+
+
+            paymentMessage.innerHTML =
+                '<div class="alert alert-danger">' +
+                'Payment verification failed. Please try again.' +
+                '</div>';
+
+        });
+
+    },
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | RAZORPAY WINDOW CLOSED
+    |--------------------------------------------------------------------------
+    */
+
+    modal: {
+
+        ondismiss: function () {
+
+            console.log(
+                "RAZORPAY WINDOW CLOSED"
+            );
+
+
+            /*
+             * IMPORTANT:
+             *
+             * Do NOT call payment_failed here.
+             *
+             * User closing Razorpay window does not automatically
+             * mean payment failed.
+             *
+             * Seat reservation will expire automatically.
+             */
+
+            if (!paymentSuccessful) {
+
+                paymentMessage.innerHTML =
+                    '<div class="alert alert-warning">' +
+                    'Payment window closed. Your seat is temporarily reserved.' +
+                    '</div>';
+
+                payButton.disabled = false;
+
+            }
+
+        }
+
+    },
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | PREFILL USER DETAILS
+    |--------------------------------------------------------------------------
+    */
+
+    prefill: {
+
+        name: "{{ request.user.get_full_name|escapejs }}",
+
+        email: "{{ request.user.email|escapejs }}"
+
+    },
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | THEME
+    |--------------------------------------------------------------------------
+    */
+
+    theme: {
+
+        color: "#28a745"
+
+    }
+
+};
+
+
+/*
+|--------------------------------------------------------------------------
+| CREATE RAZORPAY INSTANCE
+|--------------------------------------------------------------------------
+*/
+
+const razorpay = new Razorpay(options);
+
+
+/*
+|--------------------------------------------------------------------------
+| PAYMENT FAILED
+|--------------------------------------------------------------------------
+*/
+
+razorpay.on(
+    "payment.failed",
+    function (response) {
+
+        console.log(
+            "RAZORPAY PAYMENT FAILED:",
+            response
+        );
+
+
+        /*
+         * If payment already succeeded,
+         * completely ignore this event.
+         */
+
+        if (paymentSuccessful) {
+
+            console.log(
+                "Payment already successful. Ignoring failure event."
+            );
+
+            return;
+
+        }
+
+
+        /*
+         * Prevent duplicate failure requests.
+         */
+
+        if (paymentFailureHandled) {
+
+            return;
+
+        }
+
+
+        paymentFailureHandled = true;
+
+
+        payButton.disabled = true;
+
+
+        paymentMessage.innerHTML =
+            '<div class="alert alert-danger">' +
+            'Payment failed. Cancelling booking...' +
+            '</div>';
+
+
+        fetch("{% url 'payment_failed' %}", {
+
+            method: "POST",
+
+            headers: {
+
+                "Content-Type": "application/json",
+
+                "X-CSRFToken": "{{ csrf_token }}"
+
+            },
+
+            body: JSON.stringify({
+
+                booking_id: "{{ booking.id }}"
+
+            })
+
+        })
+
+
+        .then(response => {
+
+            console.log(
+                "PAYMENT FAILED HTTP STATUS:",
+                response.status
+            );
+
+            return response.json();
+
+        })
+
+
+        .then(data => {
+
+            console.log(
+                "PAYMENT FAILED SERVER RESPONSE:",
+                data
+            );
+
+
+            paymentMessage.innerHTML =
+                '<div class="alert alert-danger">' +
+                'Payment failed. Please create a new booking.' +
+                '</div>';
+
+        })
+
+
+        .catch(error => {
+
+            console.error(
+                "PAYMENT FAILED ERROR:",
+                error
+            );
+
+
+            paymentMessage.innerHTML =
+                '<div class="alert alert-danger">' +
+                'Payment failed. Please create a new booking.' +
+                '</div>';
+
+        });
+
+    }
+);
+
+
+/*
+|--------------------------------------------------------------------------
+| PAY NOW BUTTON
+|--------------------------------------------------------------------------
+*/
+
+payButton.onclick = function (e) {
+
+    e.preventDefault();
+
+
+    console.log(
+        "OPENING RAZORPAY CHECKOUT"
+    );
+
+
+    /*
+     * Reset states for this payment attempt.
+     */
+
+    paymentSuccessful = false;
+    paymentFailureHandled = false;
+    paymentVerificationStarted = false;
+
+
+    paymentMessage.innerHTML =
+        '<div class="alert alert-info">' +
+        'Opening payment gateway...' +
+        '</div>';
+
+
+    payButton.disabled = true;
+
+
+    try {
+
+        razorpay.open();
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "RAZORPAY OPEN ERROR:",
+            error
+        );
+
+
+        payButton.disabled = false;
+
+
+        paymentMessage.innerHTML =
+            '<div class="alert alert-danger">' +
+            'Unable to open payment gateway. Please try again.' +
+            '</div>';
+
+    }
+
+};
+
+</script>
 
 {% endblock %}

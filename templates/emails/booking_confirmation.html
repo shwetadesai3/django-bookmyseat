@@ -1,41 +1,78 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Confirmation</title>
+</head>
+
 <body>
 
-<h2>Booking Confirmation</h2>
+    <h2>🎟️ Booking Confirmed!</h2>
 
-<p>Hello {{ user.first_name }},</p>
+    <p>Hello {{ user_name }},</p>
 
-<p>Your ticket has been successfully booked.</p>
+    <p>
+        Your BookMySeat ticket has been successfully booked.
+    </p>
 
-<table border="1" cellpadding="10">
-    <tr>
-        <td>Movie</td>
-        <td>{{ booking.show.movie.name }}</td>
-    </tr>
+    <hr>
 
-    <tr>
-        <td>Theater</td>
-        <td>{{ booking.show.theater.name }}</td>
-    </tr>
+    <h3>Booking Details</h3>
 
-    <tr>
-        <td>Show Time</td>
-        <td>{{ booking.show.show_time }}</td>
-    </tr>
+    <p>
+        <strong>Booking ID:</strong>
+        {{ booking_id }}
+    </p>
 
-    <tr>
-        <td>Seats</td>
-        <td>{{ seats }}</td>
-    </tr>
+    <p>
+        <strong>Movie:</strong>
+        {{ movie_name }}
+    </p>
 
-    <tr>
-        <td>Payment ID</td>
-        <td>{{ payment_id }}</td>
-    </tr>
-</table>
+    <p>
+        <strong>Theater:</strong>
+        {{ theater_name }}
+    </p>
 
-<p>Thank you for booking with us.</p>
+    <p>
+        <strong>Show Time:</strong>
+        {{ show_time|date:"d M Y, h:i A" }}
+    </p>
+
+    <p>
+        <strong>Seat:</strong>
+        {{ seat_number }}
+    </p>
+
+    <hr>
+
+    <h3>Payment Details</h3>
+
+    <p>
+        <strong>Payment ID:</strong>
+        {{ payment_id }}
+    </p>
+
+    <p>
+        <strong>Amount:</strong>
+        ₹{{ amount }}
+    </p>
+
+    <p>
+        <strong>Payment Method:</strong>
+        {{ payment_method }}
+    </p>
+
+    <p>
+        <strong>Payment Status:</strong>
+        {{ payment_status }}
+    </p>
+
+    <hr>
+
+    <p>
+        Thank you for using BookMySeat!
+    </p>
 
 </body>
 </html>
