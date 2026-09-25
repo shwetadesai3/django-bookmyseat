@@ -9,10 +9,10 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
-
-from decouple import config
+#import dj_database_url
 from dotenv import load_dotenv
+from decouple import config
+
 
 
 # =========================================================
@@ -155,7 +155,7 @@ DATABASES = {
             BASE_DIR / "db.sqlite3",
     }
 }
-DATABASES['default']=dj_database_url.parse('postgresql://django_bookmyshow_rc9j_user:DeQjG376jAzklvaK2C9qMwEETlgddM6C@dpg-dar2gkh7lnhs739q4vkg-a.oregon-postgres.render.com/django_bookmyshow_rc9j')
+#DATABASES['default']=dj_database_url.parse('postgresql://django_bookmyshow_rc9j_user:DeQjG376jAzklvaK2C9qMwEETlgddM6C@dpg-dar2gkh7lnhs739q4vkg-a.oregon-postgres.render.com/django_bookmyshow_rc9j')
 
 
 # =========================================================
@@ -238,7 +238,7 @@ EMAIL_BACKEND = (
     "django.core.mail.backends.smtp.EmailBackend"
 )
 
-EMAIL_HOST = "shweta762076@gmail.com"
+EMAIL_HOST = "smtp.gmail.com"
 
 EMAIL_PORT = 587
 
