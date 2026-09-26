@@ -385,3 +385,6 @@ if not DEBUG:
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
     SECURE_HSTS_PRELOAD = True
+    LOGIN_URL = "/users/login/"
+LOGIN_REDIRECT_URL = "/movies/"
+LOGOUT_REDIRECT_URL = "/"
