@@ -13,6 +13,7 @@ import dj_database_url
 #import dj_database_url
 from dotenv import load_dotenv
 from decouple import config
+import shutil
 
 
 
@@ -388,3 +389,33 @@ if not DEBUG:
     LOGIN_URL = "/users/login/"
 LOGIN_REDIRECT_URL = "/movies/"
 LOGOUT_REDIRECT_URL = "/"
+
+
+
+
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+VERCEL = os.getenv("VERCEL")
+
+if VERCEL:
+    SQLITE_PATH = Path("/tmp/db.sqlite3")
+    SOURCE_DB = BASE_DIR / "db.sqlite3"
+
+    if not SQLITE_PATH.exists() and SOURCE_DB.exists():
+        shutil.copy2(SOURCE_DB, SQLITE_PATH)
+
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": SQLITE_PATH,
+        }
+    }
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
