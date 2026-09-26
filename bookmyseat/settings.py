@@ -331,54 +331,23 @@ CELERY_ENABLE_UTC = True
 # =========================================================
 
 LOGGING = {
-
     "version": 1,
-
     "disable_existing_loggers": False,
 
-    "formatters": {
-
-        "verbose": {
-
-            "format":
-                "{asctime} {levelname} {name} {message}",
-
-            "style": "{",
-        },
-    },
-
     "handlers": {
-
-        "email_file": {
-
-            "class":
-                "logging.FileHandler",
-
-            "filename":
-                BASE_DIR / "email.log",
-
-            "formatter":
-                "verbose",
+        "console": {
+            "class": "logging.StreamHandler",
         },
     },
 
     "loggers": {
-
-        "movies": {
-
-            "handlers": [
-                "email_file"
-            ],
-
-            "level":
-                "INFO",
-
-            "propagate":
-                False,
+        "django": {
+            "handlers": ["console"],
+            "level": "ERROR",
+            "propagate": True,
         },
     },
 }
-
 
 # =========================================================
 # RAZORPAY CONFIGURATION
