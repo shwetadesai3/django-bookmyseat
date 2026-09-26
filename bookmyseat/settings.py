@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 #import dj_database_url
 from dotenv import load_dotenv
 from decouple import config
@@ -234,25 +235,20 @@ DEFAULT_AUTO_FIELD = (
 # EMAIL CONFIGURATION
 # =========================================================
 
-EMAIL_BACKEND = (
-    "django.core.mail.backends.smtp.EmailBackend"
-)
+# =========================================================
+# EMAIL CONFIGURATION
+# =========================================================
 
-EMAIL_HOST = "smtp.gmail.com"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
-EMAIL_PORT = 587
-
+EMAIL_HOST = os.getenv("EMAIL_HOST", "smtp.gmail.com")
+EMAIL_PORT = int(os.getenv("EMAIL_PORT", "587"))
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = config(
-    "EMAIL_HOST_USER"
-)
-
-EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
-
 # =========================================================
 # REDIS CACHE
 # =========================================================
